@@ -1,0 +1,79 @@
+\subsection{Wieso macht man das?}
+\begin{frame}
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\begin{itemize}
+		\item Multicore-Systeme
+		\item Schnelle Ausführung
+	\end{itemize}
+\end{frame}
+
+\subsection{Was kann ich parallelisieren?}
+\begin{frame}
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\begin{itemize}
+		\item Sequentieller $\leftrightarrow$ Paralleler Anteil
+		\item Logische Unabhängigkeit
+	\end{itemize}
+\end{frame}
+	
+	%\lstinputlisting[language=Python, firstline=37, lastline=45]{source_filename.py}
+
+\subsection{Beispiele}
+\begin{frame}[fragile]
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\lstinputlisting[firstline=3]{hello.cpp}
+	
+	\visible<2>{
+		\vspace*{-1.45cm}%
+		\begin{tikzpicture}
+			\draw[thin](0,1.15)--(\linewidth-\pgflinewidth,0);
+			\draw[thin](0,0)--(\linewidth-\pgflinewidth,1.15);
+		\end{tikzpicture}
+	}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\lstinputlisting[firstline=4]{section.cpp}
+	
+	\visible<2>{
+		\vspace*{-4.4cm}%
+		\begin{tikzpicture}
+			\draw[thin](0,1.4)--(\linewidth-\pgflinewidth,1.4)--(\linewidth-\pgflinewidth,0)--(0,0)--(0,1.4);
+		\end{tikzpicture}
+		
+		\vspace*{0.2cm}%
+		\begin{tikzpicture}
+			\draw[thin](0,1.4)--(\linewidth-\pgflinewidth,1.4)--(\linewidth-\pgflinewidth,0)--(0,0)--(0,1.4);
+		\end{tikzpicture}
+	}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\lstinputlisting[firstline=3]{loop.cpp}
+	
+	\visible<2>{
+		\vspace*{-1.5cm}%
+		\hspace*{1.4cm}%
+		\begin{tikzpicture}
+		%	\newcounter{boxnum}
+			\foreach \x in {0, 1,...,9}{
+				\draw[thick](1.2+0.69*\x, 0.3)--(1.89+0.69*\x, 0.3)--(1.89+0.69*\x, 0)--(1.2+0.69*\x, 0)--(1.2+0.69*\x, 0.3);
+			}
+		%	\forloop{boxnum}{0}{\value{boxnum} < 10}{
+		%		\draw[thin](1.2+0.69*\value{boxnum},0.3)--(8.1,0.3)--(8.1,0)--(1.2+0.69*\value{boxnum},0)--(1.2+0.69*\value{boxnum},0.3);
+		%	}
+		\end{tikzpicture}
+	}
+\end{frame}

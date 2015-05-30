@@ -1,0 +1,133 @@
+\documentclass[unknownkeysallowed,14pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english,ngerman]{babel}
+
+\setcounter{tocdepth}{2}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows, snakes, backgrounds}
+\usepackage{wrapfig}
+\usepackage{cite}
+\usepackage{natbib}
+
+\definecolor{CommentGreen}{rgb}{0,0.4,0}
+
+\usepackage{listings}
+
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+	basicstyle=\ttfamily\scriptsize, % the size of the fonts that are used for the code
+	breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=t,                    % sets the caption-position to bottom
+	commentstyle=\color{CommentGreen},      % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=single,                    % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\bfseries\color{blue},       % keyword style
+	language=C++,                    % the language of the code
+	morekeywords={*,...},            % if you want to add more keywords to the set
+	moredelim=**[is][\color{red}]{@}{@},
+	commentstyle=\color{CommentGreen},
+	morecomment=[l]{\#},
+	moredelim=**[is][\color{magenta}]{\\}{\\},
+	moredelim=**[s][\bfseries\color{blue}]{[}{]},
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{black},  % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{magenta},     % string literal style
+	tabsize=4,                       % sets default tabsize to 4 spaces
+	title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+	inputpath=src,
+	literate=%
+		{Ö}{{\"O}}1
+		{Ä}{{\"A}}1
+		{Ü}{{\"U}}1
+		{ß}{{\ss}}1
+		{ü}{{\"u}}1
+		{ä}{{\"a}}1
+		{ö}{{\"o}}1
+		{~}{{\textasciitilde}}1
+}
+
+% For For-Loops
+\usepackage{forloop}
+\newcounter{ct}
+
+% bibentries
+
+% for \uptau
+\usepackage{upgreek}
+
+\title{EMB$ ^2$}
+\subtitle{Vergleich zu OpenMP}
+\date{\today}
+\author{Simon Varga}
+\institute[THI]{Technische Hochschule Ingolstadt}
+
+\mode<presentation>
+{
+	\usetheme{texthi}
+	\setbeamercovered{transparent = 5} %TODO check if necessary
+}
+
+% Fix ToC-Spacing
+\usepackage{etoolbox}
+
+\usepackage{cancel}
+
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
+\makeatother
+
+\graphicspath{ {img/}{img/} }
+
+\renewcommand{\refname}{Literatur}
+
+% Document..
+\begin{document}
+	\input{res/pre.tex}
+
+	\begin{frame}[plain]
+		\titlepage
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Inhalt}
+	    \tableofcontents[hideallsubsections]
+	\end{frame}
+	
+	\section{Parallelisierung}
+	\input{res/parallel.tex}
+	
+	\section{Test}
+	\begin{frame}
+		bla
+		\pause
+		blub
+	\end{frame}
+	
+	\section{EMB$ ^2$}
+	\input{res/emb2.tex}
+	
+	\nocite{lehmann}
+	\nocite{kohlhauser}
+	\nocite{probst}
+	
+	\bibliographystyle{plain}
+	\begin{frame}{Literatur}
+		\small
+		\bibliography{res/quellen.bib}
+	\end{frame}
+\end{document}

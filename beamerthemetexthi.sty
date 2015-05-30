@@ -1,0 +1,230 @@
+%%% Defining the preamble
+\mode<presentation>
+\usepackage{pgfcomp-version-0-65}
+\usepackage{color}
+\usepackage{etoolbox}
+
+%%%%%%%%%%%%%%%
+%             %
+% Color Theme %
+%             % 
+%%%%%%%%%%%%%%%
+% =================
+% Color definitions
+% =================
+%\definecolor{THIblue}{rgb}{0.0078,0.1176,0.4705}
+\definecolor{THIblue}{rgb}{0,0.352941176,0.607843137}
+
+% =============
+% Assign Colors
+% =============
+\setbeamercolor{title page header}{fg=THIblue}
+\setbeamercolor{author}{fg=THIblue}
+\setbeamercolor{date}{fg=THIblue}
+
+\setbeamercolor{frametitle}{bg=white,fg=black}
+\setbeamercolor{title}{fg=THIblue}
+
+\setbeamercolor{structure}{bg=white,fg=THIblue}
+\setbeamercolor{normal text}{fg=black}
+
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{section in toc shaded}{fg=black} 
+
+\setbeamercolor{item}{fg=THIblue}
+\setbeamercolor{subitem}{fg=THIblue}
+\setbeamercolor{subsubitem}{fg=THIblue}
+
+\setbeamercolor{description item}{fg=black}
+
+\setbeamercolor{caption}{fg=THIblue}
+\setbeamercolor{caption name}{fg=THIblue}
+
+%%%%%%%%%%%%%%
+%            %
+% Font theme %
+%            %
+%%%%%%%%%%%%%%
+\usefonttheme{professionalfonts}
+\setbeamerfont{Title}{size = \huge}
+\setbeamerfont{MasterInfo}{size = \scriptsize}
+\setbeamerfont{frametitle}{size = \Large}
+\setbeamerfont{framesubtitle}{size = \normalsize}
+
+%%%%%%%%%%%%%%%
+%             %
+% Inner Theme %
+%             %
+%%%%%%%%%%%%%%%
+\useinnertheme{rounded}
+
+% ======
+% Styles
+% ======
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+% =====
+% Items
+% =====
+\setbeamertemplate{items}[square]
+
+%%%%%%%%%%%%%%%
+%             %
+% Outer Theme %
+%             %
+%%%%%%%%%%%%%%%
+% ========
+% Headline
+% ========
+\pgfdeclareimage[width=4mm,height=70mm]{SlideLeftStripe}{images/SlideLeftStripe.png}
+
+\setbeamertemplate{headline}[text line]{}
+\setbeamertemplate{sidebar canvas right}{
+	\vspace*{13pt}\hspace*{-45pt}%
+		{\includegraphics[height=28pt]{images/LogoSmall.png}}
+}
+\setbeamertemplate{sidebar canvas left}{
+	\begin{picture}(0,0)
+		\put(0,-255){%
+			\pgfuseimage{SlideLeftStripe}
+		}
+    \end{picture}
+}
+
+% =====	
+% Title
+% =====
+\setbeamertemplate{frametitle}{
+	\color{THIblue}
+	\vspace*{4mm}\hspace*{-2mm}\textit{\insertframetitle}\newline
+	\vspace*{-20mm}\hspace*{-2mm}\textit{\normalsize{\insertframesubtitle}}
+	\vspace*{18mm}
+}
+
+% ===
+% TOC
+% ===
+\setbeamertemplate{section in toc}[rectangle]
+
+% ========
+% Footline
+% ========
+\newcommand{\Ffootline}{%
+  	\color{THIblue} \textit{\insertsection} % The left end of the footline
+  \hfill
+	\textit{\insertauthor} % The center
+  \hfill
+  	\insertframenumber/\inserttotalframenumber} % And the right end
+
+\setbeamertemplate{footline}{%
+  \usebeamerfont{structure}
+  	\begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{title in head/foot}%
+    	\Tiny\hspace*{4mm} \Ffootline \hspace{4mm}
+  	\end{beamercolorbox}}
+  	
+% disable navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%
+%             %
+% Page Styles %
+%             %
+%%%%%%%%%%%%%%%
+% ==============
+% Title Commands
+% ==============    
+% MasterInfo1
+\newcommand{\MyMasterInfoFst}{%
+	%\hspace*{20mm}\vspace{-25mm}
+	\color{THIblue} \textit{Zukunft in}}
+    
+% MasterInfo2
+\newcommand{\MyMasterInfoSec}{%
+	%\hspace*{20mm}\vspace{-25mm}
+	\color{THIblue} \textit{Bewegung}}
+
+% Title
+\newcommand{\MyTitle}{%
+ 	\hspace*{37mm}
+ 	\vspace{-45mm}
+  		\hfill \LARGE \color{THIblue} \textit{\inserttitle}}
+  			
+% Subtitle  			
+\newcommand{\MySubTitle}{%
+	\hspace*{40mm}
+	\vspace{-45mm}
+  		\hfill \Large \color{THIblue} \textit{\insertsubtitle}}
+  		
+% Author   		
+ \newcommand{\MyAuthor}{ 		
+ 	\hspace*{60mm}\vspace{-45mm}
+		\hfill \scriptsize \color{THIblue} \textbf{\insertauthor\hspace{1cm}\insertdate}}
+		
+% Institute		
+ \newcommand{\MyInstitute}{ 		
+ 	\hspace*{60mm}\vspace{-45mm}
+		\hfill \footnotesize \color{THIblue} \textbf{\textit{\insertinstitute}}}
+
+% Date			
+ \newcommand{\MyDate}{
+  	\hspace*{60mm}\vspace{-45mm}
+ 		\hfill \footnotesize \color{THIblue} \textbf{\insertdate}}
+  	
+\pgfdeclareimage[width = 0.50\paperwidth]{MasterImage}{images/MasterImage.png}
+\pgfdeclareimage[width = 0.25\paperwidth]{MasterLogo}{images/MasterLogo.png}
+
+% =====
+% Title
+% =====
+\setbeamertemplate{title page}{
+	\begin{picture}(0,30)
+		\put(-29,-160){%
+			\pgfuseimage{MasterImage}
+		}
+
+		\put(-1,-65){%
+			\begin{minipage}[b][45mm][t]{226mm}
+				\usebeamerfont{MasterInfo}{\MyMasterInfoFst\par}
+			\end{minipage}
+		}
+			
+		\put(-8,-70){%
+			\begin{minipage}[b][45mm][t]{226mm}
+				\usebeamerfont{MasterInfo}{\MyMasterInfoSec\par}
+			\end{minipage}
+		}
+		
+		\put(220, 65){%
+			\pgfuseimage{MasterLogo}
+		}
+    \end{picture}
+%
+	\hspace*{11mm}\vspace*{-60mm}
+%	
+	\begin{beamercolorbox}[wd=\paperwidth,ht=0.1\paperwidth,rightskip=5ex]{Title}
+	    \usebeamerfont{Title}%
+ 		\MyTitle
+	\end{beamercolorbox}
+%
+	\begin{beamercolorbox}[wd=\paperwidth,ht=0.12\paperwidth,rightskip=5ex]{Title}
+	    \usebeamerfont{Title}%
+ 		\MySubTitle	
+	\end{beamercolorbox}
+%
+	\begin{beamercolorbox}[wd=\paperwidth,ht=0.2\paperwidth,rightskip=5ex]{Title}
+  		\usebeamerfont{Title}%
+		\MyAuthor	
+	\end{beamercolorbox}
+%
+%   	\begin{beamercolorbox}[wd=\paperwidth,ht=0.03\paperwidth,rightskip=5ex]{Title}
+%		\usebeamerfont{head/foot}%
+%  		\MyInstitute
+%	\end{beamercolorbox}
+% 
+%   	\begin{beamercolorbox}[wd=\paperwidth,ht=0.07\paperwidth,rightskip=5ex]{Title}
+%	    \usebeamerfont{Title}%
+%	  	\MyDate
+%	\end{beamercolorbox}
+	}
+\mode<all>
