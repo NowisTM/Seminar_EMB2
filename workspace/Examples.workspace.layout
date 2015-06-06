@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_workspace_layout_file>
-	<ActiveProject path="Examples/Examples.cbp" />
-	<PreferredTarget name="Debug" />
+	<ActiveProject path="OpenMP_Examples/OpenMP_Examples.cbp" />
+	<PreferredTarget name="Release" />
 </CodeBlocks_workspace_layout_file>

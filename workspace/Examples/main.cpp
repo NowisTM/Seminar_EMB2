@@ -1,7 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-
 #define USE_STD
 #include "util.hpp"
 
@@ -105,7 +101,13 @@ void sort() {
 void lock() {
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+    bool use_cout = false;
+    if (argc > 1) {
+        use_cout = true;
+    }
+    init("std", use_cout);
+
     RUN(loop);
     RUN(loop2);
     RUN(loop3);
