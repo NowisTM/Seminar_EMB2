@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Examples">
+		<Project filename="Examples/Examples.cbp" />
+		<Project filename="OpenMP_Examples/OpenMP_Examples.cbp" />
+		<Project filename="EMBB_Examples/EMBB_Examples.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

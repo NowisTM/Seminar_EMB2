@@ -1,4 +1,9 @@
 \documentclass[unknownkeysallowed,14pt]{beamer}
+%\documentclass[unknownkeysallowed,14pt,notes=only]{beamer}   % only notes
+
+\usepackage{pgfpages}
+\setbeameroption{show notes on second screen}
+%\setbeameroption{show notes on second screen=left}
 
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -82,6 +87,8 @@
 	\setbeamercovered{transparent = 5} %TODO check if necessary
 }
 
+%\setbeamertemplate{note page}[plain]
+
 % Fix ToC-Spacing
 \usepackage{etoolbox}
 
@@ -97,6 +104,12 @@
 
 % Document..
 \begin{document}
+	% neu builden
+	% Programme testen
+	% Codeblocks
+	% Anzeigeeinstellungen
+	% pdfpc starten
+
 	\input{res/pre.tex}
 
 	\begin{frame}[plain]
@@ -111,15 +124,14 @@
 	\section{Parallelisierung}
 	\input{res/parallel.tex}
 	
-	\section{Test}
-	\begin{frame}
-		bla
-		\pause
-		blub
-	\end{frame}
+	\section{OpenMP}
+	\input{res/openmp.tex}
 	
 	\section{EMB$ ^2$}
 	\input{res/emb2.tex}
+	
+	\section{Beispiele}
+	\input{res/examples.tex}
 	
 	\nocite{lehmann}
 	\nocite{kohlhauser}

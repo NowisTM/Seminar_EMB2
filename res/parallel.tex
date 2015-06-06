@@ -5,7 +5,9 @@
 	
 	\begin{itemize}
 		\item Multicore-Systeme
+			\note[item]{auch in Autos, kleine Gebrauchsgegenstände}
 		\item Schnelle Ausführung
+			\note[item]{}
 	\end{itemize}
 \end{frame}
 
@@ -16,7 +18,9 @@
 	
 	\begin{itemize}
 		\item Sequentieller $\leftrightarrow$ Paralleler Anteil
+			\note[item]{}
 		\item Logische Unabhängigkeit
+			\note[item]{verschieden unabhängige Bereiche im Programm}
 	\end{itemize}
 \end{frame}
 	
@@ -69,11 +73,35 @@
 		\begin{tikzpicture}
 		%	\newcounter{boxnum}
 			\foreach \x in {0, 1,...,9}{
-				\draw[thick](1.2+0.69*\x, 0.3)--(1.89+0.69*\x, 0.3)--(1.89+0.69*\x, 0)--(1.2+0.69*\x, 0)--(1.2+0.69*\x, 0.3);
+				\draw[thick](1.2+0.69*\x, 0.3)--(1.888+0.69*\x, 0.3)--(1.888+0.69*\x, 0)--(1.2+0.69*\x, 0)--(1.2+0.69*\x, 0.3);
 			}
-		%	\forloop{boxnum}{0}{\value{boxnum} < 10}{
-		%		\draw[thin](1.2+0.69*\value{boxnum},0.3)--(8.1,0.3)--(8.1,0)--(1.2+0.69*\value{boxnum},0)--(1.2+0.69*\value{boxnum},0.3);
-		%	}
 		\end{tikzpicture}
 	}
+\end{frame}
+
+\subsection{Was nun?}
+\begin{frame}
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\begin{itemize}
+		\item Programmstruktur identifizieren
+			\note[item]{Wie ist das Programm aufgeteilt, }
+		\item Geeignete Mittel einsetzen
+		\item Anpassung an Zielsystem
+	\end{itemize}
+\end{frame}
+
+\subsection{Was setze ich ein?}
+\begin{frame}
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\begin{itemize}
+		\item fork
+		\item Compilerflag (-ftree-parallelize-loops)
+		\item PThread, std::thread
+		\item OpenMP
+		\item EMB$ ^2$
+	\end{itemize}
 \end{frame}

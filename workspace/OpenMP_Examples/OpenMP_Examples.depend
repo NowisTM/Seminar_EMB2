@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1433324266 source:/home/simon/Dokumente/Schule/Semester8/Seminar_Margull/workspace/OpenMP_Examples/main.cpp
+	<iostream>
+	<omp.h>
+

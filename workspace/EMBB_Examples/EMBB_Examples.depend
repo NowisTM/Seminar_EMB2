@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1433583818 source:/home/simon/Dokumente/Schule/Semester8/Seminar_Margull/workspace/EMBB_Examples/main.cpp
+	<iostream>
+	<string>
+	<embb/mtapi/mtapi.h>
+	<embb/base/base.h>
+	<embb/containers/containers.h>
+	<embb/dataflow/dataflow.h>
+	<embb/tasks/node.h>
+	"../Examples/util.hpp"
+
+1433583959 /home/simon/Dokumente/Schule/Semester8/Seminar_Margull/workspace/Examples/util.hpp
+	<chrono>
+	<locale>
+	<omp.h>
+	<unistd.h>
+	<thread>
+
