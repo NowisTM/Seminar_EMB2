@@ -55,7 +55,7 @@ struct measure {
 void init(const std::string& name = "out", bool use_cout = true) {
     std::freopen((name + ".time").c_str(), "w", stderr);
     if (!use_cout)
-        std::freopen((name + ".out", "w", stdout);
+        std::freopen((name + ".out").c_str(), "w", stdout);
 
     std::cout.imbue(std::locale(""));
     std::clog.imbue(std::locale(""));
