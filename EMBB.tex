@@ -16,8 +16,6 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows, snakes, backgrounds}
 \usepackage{wrapfig}
-\usepackage{cite}
-\usepackage{natbib}
 
 \definecolor{CommentGreen}{rgb}{0,0.4,0}
 
@@ -114,11 +112,16 @@
 
 	\begin{frame}[plain]
 		\titlepage
+			\note{Embedded Multicore Building Blocks}
 	\end{frame}
 	
 	\begin{frame}
 		\frametitle{Inhalt}
 	    \tableofcontents[hideallsubsections]
+	    	\note[item]{ganz kurz nochmal zur Parallelisierung}
+	    	\note[item]{kurze Vorstellung von OpenMP}
+	    	\note[item]{danach auch EMB2 und unterschiede zu OpenMP}
+	    	\note[item]{Beispiele in OpenMP und EMB2}
 	\end{frame}
 	
 	\section{Parallelisierung}
@@ -132,14 +135,4 @@
 	
 	\section{Beispiele}
 	\input{res/examples.tex}
-	
-	\nocite{lehmann}
-	\nocite{kohlhauser}
-	\nocite{probst}
-	
-	\bibliographystyle{plain}
-	\begin{frame}{Literatur}
-		\small
-		\bibliography{res/quellen.bib}
-	\end{frame}
 \end{document}

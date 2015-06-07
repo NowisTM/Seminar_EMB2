@@ -6,11 +6,35 @@
 	\begin{itemize}
 		\item Für C/C++, Fortran
 			\note[item]{Aktuell bei gcc-5.* OpenMP 4.0}
+		\item ähnlich mächtig zu PThreads, std::thread
+			\note[item]{}
 		\item Präprozessormakros (\#pragma)
-			\note[item]{}
-		\item ähnlich mächtig zu PThreads
-			\note[item]{}
-		\item integriert in Compiler (\#pragma)
-			\note[item]{Definition von Compileroptionen, wenn nicht ausgewertet werden kann, einfach ignoriert}
+			\note[item]{Steuerung, Angabe wie parallelisiert werden soll, Definition von Compileroptionen, wenn nicht ausgewertet werden kann, einfach ignoriert}
+		\item integriert in Compiler
+			\note[item]{Compiler muss unterstützen, aber alle gängigen}
 	\end{itemize}
+\end{frame}
+
+\subsection{Wie sieht das aus?}
+\begin{frame}
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+		
+	\lstinputlisting{openmp.cpp}
+		\note{kleine Beispielanwendung}
+		\note[item]{$\{2\}$ OpenMP Header}
+		\note[item]{$\{7\}$ Magic, man kann die Anzahl der Threads angeben}
+		\note[item]{$\{10\}$ auf Threadnummer zugreifen}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\lstinputlisting{openmp.out}
+		\note{Output bei 4 Threads, mehrere Sachen sehen:}
+			\note[item]{mehrere schreiben gleichzeitig, durcheinander, leerzeilen}
+			\note[item]{nicht in fester Reihenfolge}
+			\note[item]{}
+			\note[item]{Wie siehts mit EMB2 aus}
 \end{frame}

@@ -4,5 +4,6 @@
 		<Project filename="Examples/Examples.cbp" />
 		<Project filename="OpenMP_Examples/OpenMP_Examples.cbp" />
 		<Project filename="EMBB_Examples/EMBB_Examples.cbp" />
+		<Project filename="EMBB_ShortExample/EMBB_ShortExample.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

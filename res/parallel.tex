@@ -7,7 +7,7 @@
 		\item Multicore-Systeme
 			\note[item]{auch in Autos, kleine Gebrauchsgegenstände}
 		\item Schnelle Ausführung
-			\note[item]{}
+			\note[item]{Prozessorgeschwingikeit steigt nicht mehr, Anzahl dagegen schon}
 	\end{itemize}
 \end{frame}
 
@@ -18,7 +18,7 @@
 	
 	\begin{itemize}
 		\item Sequentieller $\leftrightarrow$ Paralleler Anteil
-			\note[item]{}
+			\note[item]{identifizierung}
 		\item Logische Unabhängigkeit
 			\note[item]{verschieden unabhängige Bereiche im Programm}
 	\end{itemize}
@@ -32,6 +32,7 @@
 	\framesubtitle{\subsecname}
 	
 	\lstinputlisting[firstline=3]{hello.cpp}
+		\note[item]{kurzes Programm, stellvertretend für viele Sequenzielle Codezeilen}
 	
 	\visible<2>{
 		\vspace*{-1.45cm}%
@@ -39,6 +40,8 @@
 			\draw[thin](0,1.15)--(\linewidth-\pgflinewidth,0);
 			\draw[thin](0,0)--(\linewidth-\pgflinewidth,1.15);
 		\end{tikzpicture}
+			\note[item]{}
+			\note[item]{nicht oder nur sehr schlecht zu Parallelisieren}
 	}
 \end{frame}
 
@@ -47,6 +50,7 @@
 	\framesubtitle{\subsecname}
 	
 	\lstinputlisting[firstline=4]{section.cpp}
+		\note[item]{1. Zeile von Datei ausgeben}
 	
 	\visible<2>{
 		\vspace*{-4.4cm}%
@@ -58,6 +62,8 @@
 		\begin{tikzpicture}
 			\draw[thin](0,1.4)--(\linewidth-\pgflinewidth,1.4)--(\linewidth-\pgflinewidth,0)--(0,0)--(0,1.4);
 		\end{tikzpicture}
+			\note[item]{}
+			\note[item]{unabhängige Bereiche, trennen}
 	}
 \end{frame}
 
@@ -66,6 +72,7 @@
 	\framesubtitle{\subsecname}
 	
 	\lstinputlisting[firstline=3]{loop.cpp}
+		\note[item]{Schleife (in der was ausgegeben wird)}
 	
 	\visible<2>{
 		\vspace*{-1.5cm}%
@@ -76,6 +83,8 @@
 				\draw[thick](1.2+0.69*\x, 0.3)--(1.888+0.69*\x, 0.3)--(1.888+0.69*\x, 0)--(1.2+0.69*\x, 0)--(1.2+0.69*\x, 0.3);
 			}
 		\end{tikzpicture}
+			\note[item]{}
+			\note[item]{Aufteilung auf beliebig viele unabhängige Einzelteile}
 	}
 \end{frame}
 
@@ -86,9 +95,11 @@
 	
 	\begin{itemize}
 		\item Programmstruktur identifizieren
-			\note[item]{Wie ist das Programm aufgeteilt, }
+			\note[item]{Wie ist das Programm aufgeteilt}
 		\item Geeignete Mittel einsetzen
+			\note[item]{Hängt ab vom Ziel, Multiplattform, Embedded UND vom Programm selber, ist es schon fertig, wird ein neues geschrieben}
 		\item Anpassung an Zielsystem
+			\note[item]{Auf Eigenheiten des Systems eingehen, evtl. sogar auf 2,3,4 Prozessoren fest einstellen}
 	\end{itemize}
 \end{frame}
 
@@ -99,9 +110,14 @@
 	
 	\begin{itemize}
 		\item fork
+			\note[item]{sollte jeder kennen, (komplett) getrennte Prozesse}
 		\item Compilerflag (-ftree-parallelize-loops)
-		\item PThread, std::thread
+			\note[item]{für C/C++ nur Schleifen, auch nicht alle, aber man muss nur flag setzen und kann es ausprobieren}
+		\item PThread, std::thread, ...
+			\note[item]{Standardwerkzeuge, C++-11}
 		\item OpenMP
+			\note[item]{gleich mehr}
 		\item EMB$ ^2$
+			\note[item]{was kann das, kleiner Vergleich}
 	\end{itemize}
 \end{frame}
