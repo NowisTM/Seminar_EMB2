@@ -63,22 +63,61 @@ void init(const std::string& name = "out", bool use_cout = true) {
 
 #ifdef USE_OMP
     #include <omp.h>
-    void sleep(double seconds = 1.0) {
+    void sleep(double seconds = 0.1) {
         double startTime = omp_get_wtime();
         while( (omp_get_wtime() - startTime) < seconds);
     }
 #elif defined(USE_EMBB)
     #include <unistd.h>
-    void sleep(double seconds = 1.0) {
+    void sleep(double seconds = 0.1) {
         if (usleep((unsigned int)(seconds * 1000)) != 0)
             throw std::runtime_error("sleep failed");
     }
 #else // std-example ohne threads
     #include <thread>
-    void sleep(double seconds = 1.0) {
+    void sleep(double seconds = 0.1) {
         std::this_thread::sleep_for (std::chrono::milliseconds((int)(seconds * 1000)));
     }
 #endif
+
+class SumCustom {
+    unsigned int a;
+public:
+    SumCustom(int value = 0) : a(value) {}
+
+    SumCustom operator+(const SumCustom& other) const {
+        return SumCustom(this->a + other.a);
+    }
+
+    SumCustom& operator+=(const SumCustom& other) {
+        this->a += other.a;
+        return *this;
+    }
+
+    SumCustom& operator=(int value) {
+        this->a = value;
+        return *this;
+    }
+
+    friend
+    std::ostream& operator<<(std::ostream& os, const SumCustom& sum) {
+        return os << sum.a;
+    }
+};
+
+template <typename T>
+void initVector(std::vector<T>& vec) {
+	for (size_t i = 0; i < vec.size(); i++) {
+		vec[i] = i;
+	}
+}
+
+template <typename T>
+void initVector(std::vector<T>& vec, T value) {
+	for (size_t i = 0; i < vec.size(); i++) {
+		vec[i] = value;
+	}
+}
 
 #endif // util_HPP
 

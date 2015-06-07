@@ -1,0 +1,38 @@
+\subsection{Aufwand}
+\begin{frame}
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\begin{itemize}
+		\item OpenMP relativ einfach
+			\note[item]{bei bestehenden Programmen}
+		\item EMBB für neue Programme
+			\note[item]{etwas schwierig die genau gleichen Beispiele, wenn man eh neu schreibt, kann man die beste Logik benutzen}
+	\end{itemize}
+\end{frame}
+
+\subsection{Zeiten}
+\begin{frame}
+	\frametitle{\secname}
+	\framesubtitle{\subsecname}
+	
+	\begin{scriptsize}
+	\begin{tabular}{|c|c|cc|cc|}
+	\hline 
+	 & \textbf{Std} & \textbf{OpenMP} & \textbf{SpeedUp} & \textbf{EMBB} & \textbf{SpeedUp} \\
+	\hline 
+	Schleife & 1.000.957 $\mu$s & 315.302 $\mu$s & 3,17 & 6.655 $\mu$s & 150,41 \\ 
+	\hline 
+	Abh. Schleife & 900.662 $\mu$s & 303.323 $\mu$s & 2.97 & 10.291 $\mu$s & 87,52 \\ 
+	\hline 
+	Reduce & 1.000.736 $\mu$s & 301.900 $\mu$s & 3,13 & 1.066 $\mu$s & 938,78 \\ 
+	\hline 
+	Reduce Custom & 1.000.742 $\mu$s & 301.928 $\mu$s & 3,15 & 1.089 $\mu$s & 918,96 \\ 
+	\hline 
+	Section & 200.231 $\mu$s & 100.102 $\mu$s & 2,00 & 196 $\mu$s & 1021,59 \\ 
+	\hline 
+	Sort & 1.901.300 $\mu$s & 1.609.059 $\mu$s & 1,18 & 5.227 $\mu$s & 363,75 \\ 
+	\hline 
+	\end{tabular}
+	\end{scriptsize}
+\end{frame}
