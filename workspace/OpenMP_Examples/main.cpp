@@ -8,13 +8,20 @@
 void loop() {
 	#pragma omp parallel for
 	for (unsigned int i = 0; i < 10; ++i) {
+		std::cout << "i = " << i << std::endl;
+	}
+}
+
+void loop2() {
+	#pragma omp parallel for
+	for (unsigned int i = 0; i < 10; ++i) {
 		sleep();
 		std::cout << "i = " << i << std::endl;
 	}
 }
 
 // Funktioniert nicht, weil Schleife in Teile aufgeteilt wird
-void loop2() {
+void loop3() {
 	std::vector<int> range(10);
 	range[0] = 0;
 
@@ -142,6 +149,7 @@ int main(int argc, char* argv[]) {
 
 	RUN(loop);
 	RUN(loop2);
+	RUN(loop3);
 	RUN(reduce_sum);
 	RUN(reduce_sum_custom);
 	RUN(section);

@@ -1,6 +1,7 @@
-loop 311.542 µs
-loop2 310.266 µs
-reduce_sum 311.133 µs
-reduce_sum_custom 311.992 µs
-section 101.969 µs
-sort 1.607.292 µs
+loop 4.423 µs
+loop2 313.370 µs
+loop3 303.884 µs
+reduce_sum 300.064 µs
+reduce_sum_custom 309.384 µs
+section 101.243 µs
+sort 1.607.041 µs

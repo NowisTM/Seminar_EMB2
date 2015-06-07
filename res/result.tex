@@ -4,6 +4,8 @@
 	\framesubtitle{\subsecname}
 	
 	\begin{itemize}
+		\item Compilerflag sinnlos
+			\note[item]{bei meinen Beispielen hat es nichts gebracht}
 		\item OpenMP relativ einfach
 			\note[item]{bei bestehenden Programmen}
 		\item EMBB für neue Programme
@@ -21,9 +23,11 @@
 	\hline 
 	 & \textbf{Std} & \textbf{OpenMP} & \textbf{SpeedUp} & \textbf{EMBB} & \textbf{SpeedUp} \\
 	\hline 
-	Schleife & 1.000.957 $\mu$s & 315.302 $\mu$s & 3,17 & 6.655 $\mu$s & 150,41 \\ 
+	Schleife o. Sleep & 24 $\mu$s & 4.423 $\mu$s & 0,005 & 95 $\mu$s & 0,25 \\ 
+	\hline  
+	Schleife & 1.000.957 $\mu$s & 315.302 $\mu$s & 3,17 & 663 $\mu$s & 1509,74 \\ 
 	\hline 
-	Abh. Schleife & 900.662 $\mu$s & 303.323 $\mu$s & 2.97 & 10.291 $\mu$s & 87,52 \\ 
+	Abh. Schleife & 900.662 $\mu$s & 303.323 $\mu$s & 2.97 & 674 $\mu$s & 1336,29 \\ 
 	\hline 
 	Reduce & 1.000.736 $\mu$s & 301.900 $\mu$s & 3,13 & 1.066 $\mu$s & 938,78 \\ 
 	\hline 
@@ -35,4 +39,7 @@
 	\hline 
 	\end{tabular}
 	\end{scriptsize}
+		\note[item]{Zeiten verglichen, natürlich nur künstlich}
+		\note[item]{jeweils mit 4 Threads}
+		\note[item]{möglicherweise bei EMBB sleep nicht sauber $\to$ wird möglicherweise optimiert}
 \end{frame}

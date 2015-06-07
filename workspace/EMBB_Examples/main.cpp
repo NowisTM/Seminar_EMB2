@@ -20,12 +20,22 @@ void loop() {
 
 	using embb::algorithms::ForEach;
 	ForEach(range.begin(), range.end(), [] (int value) {
-		sleep();
 		std::cout << value << std::endl;
 	});
 }
 
 void loop2() {
+	std::vector<int> range(10);
+	initVector(range);
+
+	using embb::algorithms::ForEach;
+	ForEach(range.begin(), range.end(), [] (int value) {
+		sleep();
+		std::cout << value << std::endl;
+	});
+}
+
+void loop3() {
 	std::vector<int> range(10), output_range(10);
 	initVector(range, 0);
 	initVector(output_range, 0);
@@ -140,6 +150,7 @@ int main(int argc, char* argv[]) {
 
 	RUN(loop);
 	RUN(loop2);
+	RUN(loop3);
 	RUN(reduce_sum);
 	RUN(reduce_sum_custom);
 	RUN(section);
