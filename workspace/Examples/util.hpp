@@ -8,6 +8,7 @@
 #include <chrono>
 #include <locale>
 #include <cstdio>
+#include <ctime>
 
 #ifdef USE_EMBB
     #define RUN_EMBB(fct) } catch (embb::base::Exception& e) { \
@@ -70,8 +71,10 @@ void init(const std::string& name = "out", bool use_cout = true) {
 #elif defined(USE_EMBB)
     #include <unistd.h>
     void sleep(double seconds = 0.1) {
-        if (usleep((unsigned int)(seconds * 1000)) != 0)
+        if (usleep((unsigned int)(seconds * 1000 * 1000)) != 0)
             throw std::runtime_error("sleep failed");
+        /*struct timespec tim = { 0, (long)(seconds * 1000 * 1000 * 1000) };
+        nanosleep(&tim, NULL);*/
     }
 #else // std-example ohne threads
     #include <thread>

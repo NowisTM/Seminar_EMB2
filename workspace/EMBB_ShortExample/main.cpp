@@ -41,10 +41,9 @@ void loop2() {
 		++i;
 	});
 
-	ForEach(range.begin(), range.end(),
-	[] (int& value) {
-		value = 0;
-	});
+	for (size_t i = 0; i < range.size(); i++) {
+		range[i] = i;
+	}
 
 	std::vector<int> output(range.size());
 
@@ -68,8 +67,8 @@ int main() {
 	try {
 		embb::tasks::Node::GetInstance();
 
-		loop1();
-		//loop2();
+		//loop1();
+		loop2();
 	} catch (embb::base::Exception& e) {
 		std::cout << "Exception: " << e.What() << std::endl;
 	}
