@@ -154,6 +154,7 @@ int main(int argc, char* argv[]) {
 	RUN(reduce_sum_custom);
 	RUN(section);
 	RUN(sort);
+	RUN(lock);
 
 	return 0;
 }
